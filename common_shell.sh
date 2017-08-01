@@ -10,4 +10,5 @@
 #TIME_WAIT		2
 #ESTABLISHED	6
 
+#tcpstat.sh
 netstat -f inet -p tcp -n | awk '{if(NR < 3){next} state[$NF]++}END{printf("state\t\tcount\n");for (item in state) printf("%s\t%d\n", item, state[item])}'
